@@ -1,0 +1,109 @@
+.dashboard {
+  font-family: system-ui, sans-serif;
+  padding: 2rem;
+  text-align: center;
+  background-color: #0f172a; /* Dark radar background */
+  color: white;
+  min-height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  /* Creates a perfect 5x5 grid */
+  grid-template-columns: repeat(5, 80px); 
+  gap: 12px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.grid-node {
+  width: 80px;
+  height: 80px;
+  background-color: #1e293b;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #4ade80; /* Radar green text */
+  transition: all 0.3s ease;
+}
+
+.grid-node:hover {
+  background-color: #334155;
+  transform: scale(1.05);
+}
+/* Styling for the new Control Panel and Button */
+.controls {
+  margin-bottom: 2rem;
+}
+
+.btn-ai {
+  background-color: #3b82f6; /* Tech blue */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-ai:hover {
+  background-color: #2563eb;
+}
+
+/* Styling for the predicted danger zones */
+.grid-node.obstacle {
+  background-color: #ef4444; /* Alert red */
+  color: white;
+  border-color: #b91c1c;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); /* Glowing effect */
+}
+.btn-quantum {
+  background-color: #8b5cf6; /* Quantum Purple */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 0.2s;
+}
+
+.btn-quantum:hover:not(:disabled) {
+  background-color: #7c3aed;
+}
+
+.btn-quantum:disabled {
+  background-color: #475569;
+  cursor: not-allowed;
+}
+
+.telemetry-panel {
+  background-color: #1e293b;
+  border: 1px solid #8b5cf6;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: inline-flex;
+  gap: 20px;
+  color: #a78bfa;
+}
+
+.grid-node.path {
+  background-color: #10b981; /* Safe path green */
+  color: #064e3b;
+  border-color: #059669;
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+}
+
+.grid-node.endpoint {
+  border: 2px solid #fbbf24; /* Gold border for start/end */
+}
